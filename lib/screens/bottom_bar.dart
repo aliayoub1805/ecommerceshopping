@@ -52,6 +52,7 @@ class _BottomBarScreen extends State<BottomBarScreen> {
       },
       unselectedItemColor: Colors.blue,
       selectedItemColor: Colors.purple,
+
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home, ),label: 'Home',),
         BottomNavigationBarItem(icon: Icon(Icons.rss_feed, ),label: 'Feeds',),

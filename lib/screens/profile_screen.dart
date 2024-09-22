@@ -13,9 +13,9 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreen extends State<ProfileScreen> {
-  bool _value =false;
+
   late ScrollController _scrollController;
-  DarkThemeProvider currentTheme = DarkThemeProvider();
+
   var top = 0.0;
   @override
   void initState() {
@@ -25,144 +25,124 @@ class _ProfileScreen extends State<ProfileScreen> {
     _scrollController.addListener(() {setState(() {
 
     });});
-    currentTheme = Provider.of<DarkThemeProvider>(context, listen: false);
-    _value = currentTheme.darkTheme;
+
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          CustomScrollView(
-            controller: _scrollController,
-            slivers: <Widget>[
-              SliverAppBar(
-                automaticallyImplyLeading: false,
-                elevation: 4,
-                expandedHeight: 200,
-                pinned: true,
-                flexibleSpace: LayoutBuilder(
-                    builder: (BuildContext context, BoxConstraints constraints) {
-                      top = constraints.biggest.height;
-                      return Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [
-                                ColorsConsts.starterColor,
-                                ColorsConsts.endColor,
-                              ],
-                              begin: const FractionalOffset(0.0, 0.0),
-                              end: const FractionalOffset(1.0, 0.0),
-                              stops: [0.0, 1.0],
-                              tileMode: TileMode.clamp),
-                        ),
-                        child: FlexibleSpaceBar(
-                          collapseMode: CollapseMode.parallax,
-                          centerTitle: true,
-                          title: Row(
-                            //  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              AnimatedOpacity(
-                                duration: Duration(milliseconds: 300),
-                                opacity: top <= 110.0 ? 1.0 : 0,
-                                child: Row(
-                                  children: [
-                                    SizedBox(
-                                      width: 12,
-                                    ),
-                                    Container(
-                                      height: kToolbarHeight / 1.8,
-                                      width: kToolbarHeight / 1.8,
-                                      decoration: BoxDecoration(
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.white,
-                                            blurRadius: 1.0,
+    return Container(
+      color: Color(0xFFF9F2FA),
+      padding: const EdgeInsets.only(top:20.0),
+      child: Scaffold(
+        body: Stack(
+          children: [
+            CustomScrollView(
+              controller: _scrollController,
+              slivers: <Widget>[
+                SliverAppBar(
+                  automaticallyImplyLeading: false,
+                  elevation: 4,
+                  expandedHeight: 200,
+                  pinned: true,
+                  flexibleSpace: LayoutBuilder(
+                      builder: (BuildContext context, BoxConstraints constraints) {
+                        top = constraints.biggest.height;
+                        return Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                colors: [
+                                  ColorsConsts.starterColor,
+                                  ColorsConsts.endColor,
+                                ],
+                                begin: const FractionalOffset(0.0, 0.0),
+                                end: const FractionalOffset(1.0, 0.0),
+                                stops: [0.0, 1.0],
+                                tileMode: TileMode.clamp),
+                          ),
+                          child: FlexibleSpaceBar(
+                            collapseMode: CollapseMode.parallax,
+                            centerTitle: true,
+                            title: Row(
+                              //  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                AnimatedOpacity(
+                                  duration: Duration(milliseconds: 300),
+                                  opacity: top <= 110.0 ? 1.0 : 0,
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 12,
+                                      ),
+                                      Container(
+                                        height: kToolbarHeight / 1.8,
+                                        width: kToolbarHeight / 1.8,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.white,
+                                              blurRadius: 1.0,
+                                            ),
+                                          ],
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: NetworkImage(
+                                                'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
                                           ),
-                                        ],
-                                        shape: BoxShape.circle,
-                                        image: DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: NetworkImage(
-                                              'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
                                         ),
                                       ),
-                                    ),
-                                    SizedBox(
-                                      width: 12,
-                                    ),
-                                    Text(
-                                      // 'top.toString()',
-                                      'Guest',
-                                      style: TextStyle(
-                                          fontSize: 20.0, color: Colors.white),
-                                    ),
-                                  ],
+                                      SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(
+                                        // 'top.toString()',
+                                        'Guest',
+                                        style: TextStyle(
+                                            fontSize: 20.0, color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            background: Image(
+                              image: NetworkImage(
+                                  'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
+                              fit: BoxFit.fill,
+                            ),
                           ),
-                          background: Image(
-                            image: NetworkImage(
-                                'https://cdn1.vectorstock.com/i/thumb-large/62/60/default-avatar-photo-placeholder-profile-image-vector-21666260.jpg'),
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      );
-                    }),
-              ),
-              SliverToBoxAdapter(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: userTitle('User Information')),
-                    Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Phone number', '4555', 0, context),
-                    userListTile('Shipping address', '', 0, context),
-                    userListTile('joined date', 'date', 0, context),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: userTitle('User settings'),
-                    ),
-                    Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-                    ListTileSwitch(
-                      value: _value,
-                      leading: Icon(Icons.dark_mode),
-                      onChanged: (value) {
-                        setState(() {
-                          _value = value;
-                          currentTheme.darkTheme = value;
-
-                        });
-                      },
-                      visualDensity: VisualDensity.comfortable,
-                      switchType: SwitchType.cupertino,
-                      switchActiveColor: Colors.indigo,
-                      title: Text('Dark theme'),
-                    ),
-                    userListTile('Logout', '', 4, context),
-                  ],
+                        );
+                      }),
                 ),
-              )
-            ],
-          ),
-          _buildFab()
-        ],
+                SliverToBoxAdapter(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: userTitle('User Information')),
+                      Divider(
+                        thickness: 1,
+                        color: Colors.grey,
+                      ),
+                      userListTile('Email', 'Email sub', 0, context),
+                      userListTile('Email', 'Email sub', 0, context),
+                      userListTile('Email', 'Email sub', 0, context),
+                      userListTile('Email', 'Email sub', 0, context),
+                      userListTile('Email', 'Email sub', 0, context),
+                      userListTile('Phone number', '4555', 0, context),
+                      userListTile('Shipping address', '', 0, context),
+                      userListTile('joined date', 'date', 0, context),
+                      userListTile('Logout', '', 4, context),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            _buildFab()
+          ],
+        ),
       ),
     );
   }

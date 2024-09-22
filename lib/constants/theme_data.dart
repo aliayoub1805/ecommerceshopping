@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/*
 class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
@@ -47,6 +48,60 @@ class Styles {
       textSelectionTheme: TextSelectionThemeData(
         selectionColor: isDarkTheme ? Colors.deepPurple : Colors.lightBlue,
         cursorColor: isDarkTheme ? Colors.white : Colors.black,
+      ),
+    );
+  }
+}
+
+*/
+
+class Styles {
+  static ThemeData themeData(bool isDarkTheme, BuildContext context) {
+    return ThemeData(
+      scaffoldBackgroundColor: Colors.white,
+      primarySwatch: Colors.purple,
+      primaryColor: Colors.grey.shade300,
+      colorScheme: ColorScheme(
+        primary: Colors.deepPurple,
+        secondary: Colors.deepPurpleAccent,
+        surface: Colors.white,
+        background: Colors.white,
+        error: Colors.red,
+        onPrimary: Colors.white,
+        onSecondary: Colors.black,
+        onSurface: Colors.black, // لون النص على السطح
+        onBackground: Colors.black, // لون النص على الخلفية
+        onError: Colors.white,
+        brightness: Brightness.light,
+      ),
+      hintColor: Colors.grey.shade800,
+      highlightColor: Color(0xffFCE192),
+      hoverColor: Color(0xff4285F4),
+      focusColor: Color(0xffA8DAB5),
+      disabledColor: Colors.grey,
+      cardColor: Colors.white,
+      canvasColor: Colors.grey[50],
+      appBarTheme: AppBarTheme(
+        elevation: 0.0,
+        backgroundColor:Colors.white,
+        iconTheme: IconThemeData(color: Colors.black), // لون الأيقونات
+        titleTextStyle: TextStyle(
+          color: Colors.black, // لون النص في العنوان
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      textTheme: TextTheme(
+        bodyLarge: TextStyle(color: Colors.black), // نص عادي
+        bodyMedium: TextStyle(color: Colors.black54), // نص ثانوي
+        // يمكنك تخصيص المزيد من النصوص إذا لزم الأمر
+      ),
+      iconTheme: IconThemeData(
+        color: Colors.black, // لون الأيقونات العامة
+      ),
+      textSelectionTheme: TextSelectionThemeData(
+        selectionColor: Colors.deepPurple,
+        cursorColor: Colors.black,
       ),
     );
   }

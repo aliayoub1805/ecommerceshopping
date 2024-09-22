@@ -70,16 +70,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  /*
   DarkThemeProvider themeChangeProvider = DarkThemeProvider();
 
   void getCurrentAppTheme() async {
     themeChangeProvider.darkTheme =
     await themeChangeProvider.darkThemePreferences.getTheme();
   }
-
+  */
   @override
   void initState() {
-    getCurrentAppTheme();
+    //getCurrentAppTheme();
     super.initState();
   }
 
@@ -93,7 +94,7 @@ class _MyAppState extends State<MyApp> {
     );
 
 
-
+    /*
 
     return MultiProvider(
       providers: [
@@ -109,6 +110,16 @@ class _MyAppState extends State<MyApp> {
           home: BottomBarScreen(),
         );
       }),
+    );
+    */
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+
+      ),
+      home: BottomBarScreen(),
     );
   }
 }
