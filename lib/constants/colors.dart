@@ -10,12 +10,13 @@ class ColorsConsts{
   static Color favColor = Color(0xFFF44336);
   static Color favBadgeColor = Color(0xFFE57373);
 
-  static Color cartColor = Color(0xFFBA68C8);
+  static Color cartColor = Color(0xFFCA1ECD);
+  static Color wishListColor = Color(0xFF1ECD45);
 
   static Color gradiendFStart = Color(0xFFE04048);
   static Color gradiendFEnd = Color(0xFFE1BEE7);
   static Color endColor = Color(0xFFCE93D8);
-
+  static Color darkBlue = Color(0xFF016398);
   static Color purple300 = Color(0xFFBA68C8);
   static Color gradiendLEnd = Color(0xFFAB47BC);
   static Color gradiendLStart = Color(0xFFAA00FF);

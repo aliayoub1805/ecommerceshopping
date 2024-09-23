@@ -130,7 +130,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 210,
+                height: 150,
                 width: MediaQuery.of(context).size.width * 0.95,
                 child: Swiper(
                   itemCount: _brandImages.length,
@@ -147,9 +147,9 @@ class HomeScreen extends StatelessWidget {
                   },
                   itemBuilder: (BuildContext ctx, int index) {
                     return ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(25),
                       child: Container(
-                        color: Colors.blueGrey,
+                        color: ColorsConsts.white,
                         child: Image.asset(
                           _brandImages[index],
                           fit: BoxFit.fill,

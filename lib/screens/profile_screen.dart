@@ -129,7 +129,7 @@ class _UserInfoState extends State<ProfileScreen> {
                   children: [
                     Padding(
                         padding: const EdgeInsets.only(left: 8.0),
-                        child: userTitle('User Bag')),
+                        child: userTitle('התיק')),
                     Divider(
                       thickness: 1,
                       color: Colors.grey,
@@ -142,45 +142,35 @@ class _UserInfoState extends State<ProfileScreen> {
                           onTap: () => Navigator.of(context).pushNamed(
                               WishlistScreen.routeName
                           ),
-                          title: Text('Wishlist'),
-                          trailing: Icon(Icons.chevron_right_rounded),
-                          leading: Icon(Icons.rss_feed),
+                          title: Text('רשימת משאלות'),
+                          trailing: Icon(Icons.chevron_right_rounded,color: ColorsConsts.wishListColor,),
+                          leading: Icon(Icons.rss_feed,color: ColorsConsts.wishListColor,),
                         ),
                       ),
                     ),
                     Material(
                       color: Colors.transparent,
                       child: InkWell(
-                        splashColor: Theme.of(context).splashColor,
                         child: ListTile(
                           onTap: () {},
-                          title: Text('Cart'),
-                          trailing: Icon(Icons.chevron_right_rounded),
-                          leading: Icon(Icons.shopping_cart),
+                          title: Text('סל הקניות'),
+                          trailing: Icon(Icons.chevron_right_rounded,color: ColorsConsts.cartColor,),
+                          leading: Icon(Icons.shopping_cart,color: ColorsConsts.cartColor,),
                         ),
                       ),
                     ),
                     Padding(
                         padding: const EdgeInsets.only(left: 8.0),
-                        child: userTitle('User Information')),
+                        child: userTitle('הפרטים')),
                     Divider(
                       thickness: 1,
                       color: Colors.grey,
                     ),
-                    userListTile('Email', 'Email sub', 0, context),
-                    userListTile('Phone number', '4555', 1, context),
-                    userListTile('Shipping address', '', 2, context),
-                    userListTile('joined date', 'date', 3, context),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: userTitle('User settings'),
-                    ),
-                    Divider(
-                      thickness: 1,
-                      color: Colors.grey,
-                    ),
-
-                    userListTile('Logout', '', 4, context),
+                    userListTile('אימיל', 'כתובת המייל', 0, context),
+                    userListTile('מספר הטלפון', '4555', 1, context),
+                    userListTile('כתובת', '', 2, context),
+                    userListTile('תאריך הצטרפות', 'תאריך', 3, context),
+                    userListTile('יציאה', '', 4, context),
                   ],
                 ),
               )
@@ -203,18 +193,37 @@ class _UserInfoState extends State<ProfileScreen> {
 
   Widget userListTile(
       String title, String subTitle, int index, BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        splashColor: Theme.of(context).splashColor,
-        child: ListTile(
-          onTap: () {},
-          title: Text(title),
-          subtitle: Text(subTitle),
-          leading: Icon(_userTileIcons[index]),
+    if( index != 4) {
+      return Material(
+        color: Colors.transparent,
+        child: InkWell(
+          splashColor: Theme
+              .of(context)
+              .splashColor,
+          child: ListTile(
+            onTap: () {},
+            title: Text(title),
+            subtitle: Text(subTitle),
+            leading: Icon(_userTileIcons[index], color: ColorsConsts.darkBlue,),
+          ),
         ),
-      ),
-    );
+      );
+    }
+    else{
+      return Material(
+        color: Colors.transparent,
+        child: InkWell(
+          splashColor: Theme
+              .of(context)
+              .splashColor,
+          child: ListTile(
+            onTap: () {},
+            title: Text(title),
+            leading: Icon(_userTileIcons[index], color: ColorsConsts.gradiendFStart,),
+          ),
+        ),
+      );
+    }
   }
 
   Widget userTitle(String title) {
