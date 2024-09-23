@@ -54,14 +54,16 @@ class _BottomBarScreen extends State<BottomBarScreen> {
       selectedItemColor: Colors.purple,
 
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home, ),label: 'Home',),
-        BottomNavigationBarItem(icon: Icon(Icons.rss_feed, ),label: 'Feeds',),
-        BottomNavigationBarItem(icon: Icon(Icons.search, ),label: 'Search',),
-        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart, ),label: 'Cart',),
-        BottomNavigationBarItem(icon: Icon(Icons.person,),label: 'Profile',),
+        BottomNavigationBarItem(icon: Icon(Icons.home, ),label: 'בית',),
+        BottomNavigationBarItem(icon: Icon(Icons.rss_feed, ),label: 'חדש',),
+        BottomNavigationBarItem(icon: Icon(Icons.search, ),label: 'חיפוש',),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_cart, ),label: 'קניות',),
+        BottomNavigationBarItem(icon: Icon(Icons.person,),label: 'פרופייל',),
       ],
     ),
-      body: _pages[_pageIndex],
+      body: Directionality(
+        textDirection: TextDirection.rtl
+        , child: _pages[_pageIndex],),
     );
   }
 }

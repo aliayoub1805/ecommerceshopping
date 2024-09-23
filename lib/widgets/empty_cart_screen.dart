@@ -1,9 +1,4 @@
-
-
-import 'package:ecommerce_shopping_v/provider/dark_theme_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
 import '../constants/colors.dart';
 
 class EmptyCartScreen extends StatelessWidget {
@@ -12,7 +7,7 @@ class EmptyCartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //final themeChange = Provider.of<DarkThemeProvider>(context);
-    final themeData = ThemeData();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [

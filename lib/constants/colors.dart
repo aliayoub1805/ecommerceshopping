@@ -6,7 +6,7 @@ class ColorsConsts{
   static Color title = Colors.deepPurple;
   static Color subTitle = Colors.deepPurple.shade500;
   static Color background = Color(0xFFF9F2FA);
-
+  static Color purple = Color(0xFF6750A4);
   static Color favColor = Color(0xFFF44336);
   static Color favBadgeColor = Color(0xFFE57373);
 

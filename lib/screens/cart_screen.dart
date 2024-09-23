@@ -1,12 +1,11 @@
 
-
-import 'package:ecommerce_shopping_v/cards/shopping_card.dart';
-import 'package:ecommerce_shopping_v/screens/cart_full.dart';
+import 'package:ecommerce_shopping_v/widgets/cart_full.dart';
 
 
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatefulWidget {
+  static const routeName = '/CartScreen';
   const CartScreen({super.key});
 
   @override

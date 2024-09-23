@@ -1,10 +1,7 @@
 import 'package:ecommerce_shopping_v/screens/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 
-import 'constants/theme_data.dart';
-import 'provider/dark_theme_provider.dart';
 
 
 /*
@@ -119,7 +116,10 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.deepPurple,
 
       ),
-      home: BottomBarScreen(),
+      home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: BottomBarScreen(),
+      ),
     );
   }
 }
